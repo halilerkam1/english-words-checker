@@ -42,12 +42,15 @@ function calculatePercentage() {
         }
     });
 
+    console.log('Known Words:', knownWords);
+    console.log('Unknown Words:', unknownWords);
+
     const percentage = ((knownWords / totalWords) * 100).toFixed(2);
+    console.log('Percentage:', percentage);
     const result = document.getElementById('result');
     result.textContent = `Percentage of words known: ${percentage}%`;
 
     // Display the words user doesn't know
-    console.log('Unknown Words:', unknownWords);
 }
 
 // Load the word list when the page is ready
