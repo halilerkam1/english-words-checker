@@ -36,6 +36,19 @@ function calculatePercentage() {
 
     checkboxes.forEach(checkbox => {
         if (checkbox.checked) {
+            knownWords += 1; // Use += 1 instead of ++ to ensure knownWords is treated as a number.
+        } else {
+            unknownWords.push(checkbox.value);
+        }
+    });
+
+    if (totalWords === 0) {
+        console.log('No words in the list.');
+        return;
+    }
+
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
             knownWords++;
         } else {
             unknownWords.push(checkbox.value);
